@@ -1,0 +1,27 @@
+<section>
+
+  <form #lupeForm="ngForm" (ngSubmit)=recibiendoElForm(lupeForm) >
+
+    <input required [(ngModel)]="username" type="text" name="username" placeholder="Tu username porfi">
+    <br>
+    <input required [(ngModel)]="email" type="email" name="email" placeholder="Tu email :)">
+    <br>
+    <input required #myPassword="ngModel" [(ngModel)]="pass" type="password" name="pass" placeholder="Tu contraseña :)">
+    <!-- <div *ngIf="myPassword.errors && (myPassword.dirty || myPassword.touched)" >
+      <p style="color: red">
+        La contraseña es requerida :)
+      </p>
+    </div> -->
+    <br>
+    <input required #mySecondPassword [(ngModel)]="pass2" type="password" name="pass2" placeholder="Repite tu contraseña :)">
+
+    <div *ngIf="(myPassword.length > 0) && (myPassword != mySecondPassword)" >
+      <p style="color: red">
+        Tus contraseñas no coinciden 😅
+      </p>
+    </div>
+
+    <input type="submit">
+  </form>
+
+</section>

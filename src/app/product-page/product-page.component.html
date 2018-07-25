@@ -1,0 +1,18 @@
+<nav>
+  <h1>Titulo del e-commerce</h1>
+  <div *ngFor="let prod of selectedProducts" >
+    {{prod.name}}
+  </div>
+</nav>
+
+<section>
+
+  <h2>Productos</h2>
+
+  <ul style="display:flex" >
+    <app-card-product (addCart)="showProduct($event)" *ngFor="let p of productos" [producto]="p" >
+    
+    </app-card-product>
+  </ul>
+
+</section>
