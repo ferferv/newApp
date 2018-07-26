@@ -1,4 +1,6 @@
-<a [routerLink]="['detail', producto._id]">
+<a 
+[queryParams]="{size:'XL', color:'red', discount:'20%'}"
+[routerLink]="['detail', producto._id]">
   <div>
     <h2>{{producto.name}}</h2>
     <img width="30px" height="30px" src="{{producto.pic || 'https://cdn0.iconfinder.com/data/icons/gray-business-toolbar/512/product-3-512.png' }}" alt="img">
