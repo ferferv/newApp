@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { resolve } from 'path';
+import { reject } from '../../node_modules/@types/q';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +46,16 @@ export class ProductListService {
 
   getOneProduct(id) {
     return this.productos.find(p => p._id == id)
+  }
+
+  updateProduct(producto){
+    return new Promise((resolve, reject) =>{
+      this.productos = this.productos.map(p => {
+        if(p._id == producto._id) return producto
+        return p
+    }) //map
+      return resolve()
+    })
+    //this.productos = [...this.productos.filter(p => p._id == producto._id), producto]
   }
 }

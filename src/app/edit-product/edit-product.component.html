@@ -1,0 +1,12 @@
+<div>
+  <h2>Edita el producto</h2>
+  <input [(ngModel)]="producto.name" type="text">
+  <br>
+  <input [(ngModel)]="producto.price" type="text">
+  <br>
+  <textarea [(ngModel)]="producto.desc"></textarea>
+  <br>
+  <input [(ngModel)]="producto.pic" type="text">
+
+  <button (click)="saveProducto()" >guardar</button>
+</div>
